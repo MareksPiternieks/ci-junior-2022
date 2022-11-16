@@ -46,29 +46,30 @@ pipeline {
         }
         stage('test-prd') {
             steps {
-                script{
-                    test("PRD")
-                }
+                echo "Testing on PRD.."
+                // script{
+                //     test("PRD")
+                // }
             }
         }
     }
-    post { 
-        always { 
-            echo 'This will be always executed'
-        }
-        success{
-            echo 'This will be executed on success'
-        }
-        failure{
-            echo 'This will be executed on failure'
-        }
-    }
+    // post { 
+    //     always { 
+    //         echo 'This will be always executed'
+    //     }
+    //     success{
+    //         echo 'This will be executed on success'
+    //     }
+    //     failure{
+    //         echo 'This will be executed on failure'
+    //     }
+    // }
 }
 
-// def deploy(String environment){
-//     echo "Deployment on ${environment} environmnt triggered.."
-//     build job: "UI Tests", parameters: [string(name: "ENVIRONMENT", value:"${environment}")]
-// }
+def deploy(String environment){
+    echo "Deployment on ${environment} environmnt triggered.."
+    build job: "UI Tests", parameters: [string(name: "ENVIRONMENT", value:"${environment}")]
+}
 
 // def test(String environment){
 //     echo "Tests on ${environment} environmnt triggered.."

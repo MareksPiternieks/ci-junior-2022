@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# Martins Tararujs
+# Mareks Piternieks
 
 source "https://rubygems.org"
 
@@ -12,4 +12,3 @@ gem "rest-client"
 gem "json"
 gem "test-unit"
 gem "mysql2"
-
